@@ -5,12 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homework 11</title>
+    <style>
+      .search-form {
+        display: flex;
+        justify-content: center;
+        background-color: rgb(50, 50, 160);
+        padding: 10px;       
+      }
+      
+      .gallery {
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis: auto;
+        justify-content: space-around;
+        gap: 20px;
+      }
+
+      .photo-card .info {
+        width: 320px;
+      }
+
+      img {
+        box-sizing: border-box;
+        width: 320px;
+        height: 200px;
+        background-size: auto;
+      }
+
+      .info {
+        display: flex;
+        justify-content: space-evenly;
+        border-bottom: 1px solid #909090;       
+      }
+          
+      .info-item {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <input type="text" id="search-box" />
-    <ul class="country-list"></ul>
-    <div class="country-info"></div>
-
+    <form class="search-form" id="search-form">
+      <input
+        type="text"
+        name="searchQuery"
+        autocomplete="off"
+        placeholder="Search images..."
+      />
+      <button type="submit">Search</button>
+    </form>
+    <div class="gallery">            
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="index.js" type="module"></script>
   </body>
 </html>
