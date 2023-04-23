@@ -1,8 +1,8 @@
 import './css/styles.css';
 import Notiflix from 'notiflix';
-import SimpleLightbox from "simplelightbox";
+import SimpleLightbox from 'simplelightbox';
 // Додатковий імпорт стилів
-import "simplelightbox/dist/simple-lightbox.min.css";
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 import NewsApiService from "./js/NewsApiService.js";
 import LoadMoreBtn from "./js/LoadMoreBtn.js";
@@ -164,7 +164,8 @@ function createMarkupList({ webformatURL, largeImageURL,tags, likes, views, comm
 
 function updateGalleryList(markup) {  
   if (markup !== undefined)
-    refs.galleryList.insertAdjacentHTML("beforeend", markup);
+    {refs.galleryList.insertAdjacentHTML("beforeend", markup);
+    gallery.refresh();}
 };
 
 function clearGalleryList() {
@@ -184,6 +185,6 @@ function endGalleryList(err) {
 
 let gallery = new SimpleLightbox('.gallery a');
 gallery.on('show.simplelightbox', function () {
-  console.log('gallery:', gallery.elements);
-	console.log('gallery:', gallery.elements.length);
+  // console.log('gallery:', gallery.elements);
+	// console.log('gallery:', gallery.elements.length);
 });
