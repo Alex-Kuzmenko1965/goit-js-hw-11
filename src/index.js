@@ -1,11 +1,16 @@
-import './css/styles.css';
-import Notiflix from 'notiflix';
-import SimpleLightbox from 'simplelightbox';
+import "./css/styles.css";
+import Notiflix from "notiflix";
+import SimpleLightbox from "simplelightbox";
 // Додатковий імпорт стилів
-import 'simplelightbox/dist/simple-lightbox.min.css';
+import "simplelightbox/dist/simple-lightbox.min.css";
 
 import NewsApiService from "./js/NewsApiService.js";
 import LoadMoreBtn from "./js/LoadMoreBtn.js";
+
+let gallery = new SimpleLightbox('.gallery a');
+gallery.on('show.simplelightbox', function () {
+  console.log("+");
+});
 
 const refs = {
   form: document.getElementById('search-form'),
@@ -182,9 +187,3 @@ function endGalleryList(err) {
   loadMoreBtn.hide();
   Notiflix.Notify.warning("We're sorry, but you've reached the end of search results.");
 };
-
-let gallery = new SimpleLightbox('.gallery a');
-gallery.on('show.simplelightbox', function () {
-  // console.log('gallery:', gallery.elements);
-	// console.log('gallery:', gallery.elements.length);
-});
