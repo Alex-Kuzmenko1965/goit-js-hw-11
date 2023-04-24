@@ -1,6 +1,7 @@
 export default class NewsApiService {
 static ENDPOINT = "https://pixabay.com/api/";
 static API_KEY = "35625970-89038dd523b582e6c8e1b8881";
+static PER_PAGE = 40;
 
 constructor() {
   this.query = "";
@@ -8,12 +9,12 @@ constructor() {
 }
 
 async getNews() {
-  const url = `${NewsApiService.ENDPOINT}?key=${NewsApiService.API_KEY}&q=${this.query}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40&page=${this.page}`;
+  const url = `${NewsApiService.ENDPOINT}?key=${NewsApiService.API_KEY}&q=${this.query}&image_type=photo&orientation=horizontal&safesearch=true&per_page=${NewsApiService.PER_PAGE}&page=${this.page}`;
   console.log(url);
 
   const { data } = await axios.get(url);
-  console.log(await axios.get(url));
-  console.log(data);    
+  // console.log(await axios.get(url));
+  // console.log(data);    
   this.incrementPage();
 
   return data;
