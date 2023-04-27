@@ -59,7 +59,7 @@ const styleAtr = `
     }
     .load-more {
       display: block;
-      margin: 0 auto;
+      margin: 10px auto;
     }   
     button.hidden {
       display: none;
