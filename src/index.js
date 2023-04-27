@@ -56,7 +56,11 @@ const styleAtr = `
     }        
     .info-item {
       text-align: center;
-    }    
+    }
+    .load-more {
+      display: block;
+      margin: 0 auto;
+    }   
     button.hidden {
       display: none;
     }`;
