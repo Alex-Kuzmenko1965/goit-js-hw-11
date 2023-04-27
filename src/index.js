@@ -138,7 +138,7 @@ async function loadMoreHitsMarkup() {
   loadMoreBtn.show();  
   const { hits, totalHits } = await newsApiService.getNews();
   // console.log(hits);
-  // console.log(totalHits);    
+  console.log(totalHits);    
   if (hits.length === 0) throw new Error("No data!");
   {
     totalPage -= 1;
